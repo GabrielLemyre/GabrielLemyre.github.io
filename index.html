@@ -3,17 +3,27 @@
   <head>
 <meta charset="utf-8"/>
 <title>Debatable Tastes</title>
-<style> table {align:"center"}
-  td {text-align:center; border: 1px solid black; align:"center"}
+<style> table { border-collapse: collapse;}
+  tr {text-align:center; border: 1px solid black; align:"center";}
   tbody>tr>:nth-child(1){
-    border: 1px solid  white;
+    border: 1px solid  black;
 }
-table.myFormat tr td { font-size: 16px; }
+tbody>tr>:nth-child(4){
+    width: 200px;
+}
+tbody>tr>:nth-child(5){
+    border: 1px solid  black;
+    width: 200px;
+}
+table.myFormat tr td {
+  font-size: 18px;
+  padding: 3px;
+}
 .fix_block {
     position: fixed;
-    top: 100px;
-    left: 30px;
-    padding: 20px;
+    top: 10px;
+    left: 3px;
+    padding: 200px;
     border: 1px solid #000;
 }
 </style>
@@ -25,16 +35,16 @@ table.myFormat tr td { font-size: 16px; }
 
 <table class='myFormat' align="center">
     <tr>
-        <th style="border: 1px solid  white;">Pochette</th>
-        <th style="border: 1px solid  white;">Album</th>
-        <th style="border: 1px solid  white;">Artiste</th>
-        <th style="border: 1px solid  white;">Année Sortie</th>
-        <th style="border: 1px solid  white;">Propriétaire</th>
+        <th>Pochette</th>
+        <th>Album</th>
+        <th>Artiste</th>
+        <th>Année Sortie</th>
+        <th>Propriétaire</th>
     </tr>
 
     <tr>
     	<!-- Path to the image -->
-    	<td><img src="images OUTPUT\2PAC - All Eyez on Me.jpg" alt="All Eyez on Me" style='border:2px solid #FFFFFF' height=200></img></th>
+    	<td><img src="images OUTPUT\2PAC - All Eyez on Me.jpg" alt="All Eyez on Me" height=200></img></th>
     	<td>All Eyez on Me</th>
     	<td>2PAC</th>
     	<td></th>
