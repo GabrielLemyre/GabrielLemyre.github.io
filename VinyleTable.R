@@ -28,13 +28,17 @@ Albums.noExt <- unlist(strsplit(albums,".jpg"))
 
 Albums.info <- do.call(rbind, strsplit(Albums.noExt," - "))
 
-Albums.info.full <- cbind(Albums.info,paste("images\\",albums,sep=""))
+Albums.info.full <- data.table(cbind(Albums.info,paste("images\\",albums,sep="")))
+names(Albums.info.full) <- c("Artist","Album","Path")
+Albums.info.full.Ordered <- Albums.info.full[order(Albums.info.full[["Artist"]],Albums.info.full[["Album"]]),]
 
 tableWeb <- paste("<tr>\n",
             "\t<!-- Path to the image -->\n",
-            "\t<td><img src=\"",Albums.info.full[,3],"\" alt=\"",Albums.info.full[,2],"\" border=3 height=200 width=200></img></th>\n",
-            "\t<td>",Albums.info.full[,2],"</th>\n",
-            "\t<td>",Albums.info.full[,1],"</th>\n",
+            "\t<td><img src=\"",Albums.info.full.Ordered[["Path"]],"\" alt=\"",Albums.info.full.Ordered[["Path"]],"\" style='border:2px solid #FFFFFF' height=200 width=200></img></th>\n",
+            "\t<td>",Albums.info.full.Ordered[["Album"]],"</th>\n",
+            "\t<td>",Albums.info.full.Ordered[["Artist"]],"</th>\n",
+            "\t<td>","","</th>\n",
+            "\t<td>","Gabriel","</th>\n",
       "</tr>\n",sep="")
 
 Copie.Presse.Papier(tableWeb)
