@@ -52,7 +52,7 @@ Album_data <- read_excel(paste("/Users/gabriellemyre/Documents/GitHub/GabrielLem
 
 tableWeb <- paste("<tr>\n",
             "\t<!-- Path to the image -->\n",
-            "\t<td><img src=\"images OUTPUT\\",Album_data[["Path"]],"\" alt=\"",Album_data[["Album"]],"\" style='border:2px solid #FFFFFF' height=200></img></th>\n",
+            "\t<td><img src=\"images OUTPUT\\",Album_data[["Path"]],"\" alt=\"",Album_data[["Album"]],"\" height=200></img></th>\n",
             "\t<td>",Album_data[["Album"]],"</th>\n",
             "\t<td>",Album_data[["Artist"]],"</th>\n",
             "\t<td>","","</th>\n",
