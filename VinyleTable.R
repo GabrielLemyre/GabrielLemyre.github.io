@@ -19,7 +19,8 @@ Copie.Presse.Papier <- function(string) {
       }
 }
 
-albums <- list.files("/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/images")
+path.to.images.folder <- "/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/images"
+albums <- list.files(path.to.images.folder)
 
 albums <- matrix(albums,length(albums),1)
 
