@@ -4,9 +4,17 @@
 <meta charset="utf-8"/>
 <title>Gab's Debatable Tastes</title>
 <style> table {align:"center"}
-  td, th {text-align:center; border: 1px solid black; align:"center"}
+  td {text-align:center; border: 1px solid black; align:"center"}
   tbody>tr>:nth-child(1){
     border: 1px solid  white;
+}
+table.myFormat tr td { font-size: 16px; }
+.fix_block {
+    position: fixed;
+    top: 100px;
+    left: 30px;
+    padding: 20px;
+    border: 1px solid #000;
 }
 </style>
  </head>
@@ -15,19 +23,14 @@
     <h1>Répertoire de Vinyle</h1>
 </center>
 
-<table align="center">
+<table class='myFormat' align="center">
     <tr>
-        <th colspan="4">Info</th>
+        <th style="border: 1px solid  white;">Pochette</th>
+        <th style="border: 1px solid  white;">Album</th>
+        <th style="border: 1px solid  white;">Artiste</th>
+        <th style="border: 1px solid  white;">Année Sortie</th>
+        <th style="border: 1px solid  white;">Propriétaire</th>
     </tr>
-    <tr>
-        <th>Pochette</th>
-        <th>Album</th>
-        <th>Artiste</th>
-        <th>Année</th>
-        <th>Propriétaire</th>
-    </tr>
-
-
 
     <tr>
     	<!-- Path to the image -->
