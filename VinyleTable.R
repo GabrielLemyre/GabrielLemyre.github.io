@@ -31,10 +31,10 @@ Albums.info <- do.call(rbind, strsplit(Albums.noExt," - "))
 Albums.info.full <- cbind(Albums.info,paste("images\\",albums,sep=""))
 
 tableWeb <- paste("<tr>\n",
-            "<td>",Albums.info.full[,2],"</th>\n",
-            "<td>",Albums.info.full[,1],"</th>\n",
-            "<!-- considering it is on the same folder that .html file -->\n",
-            "<td><img src=\"",Albums.info.full[,3],"\" alt=\"",Albums.info.full[,2],"\" border=3 height=200 width=200></img></th>\n",
+            "\t<!-- Path to the image -->\n",
+            "\t<td><img src=\"",Albums.info.full[,3],"\" alt=\"",Albums.info.full[,2],"\" border=3 height=200 width=200></img></th>\n",
+            "\t<td>",Albums.info.full[,2],"</th>\n",
+            "\t<td>",Albums.info.full[,1],"</th>\n",
       "</tr>\n",sep="")
 
 Copie.Presse.Papier(tableWeb)
