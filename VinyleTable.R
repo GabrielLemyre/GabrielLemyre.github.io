@@ -23,8 +23,8 @@ Copie.Presse.Papier <- function(string) {
       }
 }
 
-path.to.images.folder.Old <- "/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/images INPUT"
-path.to.images.folder <- "/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/images OUTPUT"
+# path.to.images.folder.Old <- "/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/images - Mado"
+# path.to.images.folder <- "/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/images - Mado copie"
 # albums <- list.files(path.to.images.folder.Old)
 # 
 # albums <- matrix(albums,length(albums),1)
@@ -36,27 +36,29 @@ path.to.images.folder <- "/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.gi
 # Albums.info.full <- data.table(cbind(Albums.info,albums))
 # names(Albums.info.full) <- c("Artist","Album","Path")
 # 
-# Albums.info.full[, Path := stri_trans_general(str = Path, 
+# Albums.info.full[, Path := stri_trans_general(str = Path,
 #                                    id = "Latin-ASCII")]
 # Albums.info.full$Path <- gsub("\\?", "", Albums.info.full$Path)
 # Albums.info.full$Path <- gsub("\\'", "", Albums.info.full$Path)
 # 
 # file.rename(paste(path.to.images.folder,list.files(path.to.images.folder),sep="/"), paste(path.to.images.folder,Albums.info.full[["Path"]],sep="/"))
-# 
-# # Order
-# Albums.info.full.Ordered <- Albums.info.full[order(Albums.info.full[["Artist"]],Albums.info.full[["Album"]]),]
 
-# write_xlsx(Albums.info.full.Ordered,paste("/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/VinyleTable.xlsx"))
+# Order
+# Albums.info.full.Ordered <- Albums.info.full[order(Albums.info.full[["Artist"]],Albums.info.full[["Album"]]),]
+# 
+# write_xlsx(Albums.info.full.Ordered,paste("/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/VinyleTable_Mado.xlsx"))
 
 Album_data <- read_excel(paste("/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/VinyleTable.xlsx"))
+names(Album_data)  <- c("Artist","Album","Path","Owner")
+Album_data_Ordered <- Album_data[order(Album_data[["Artist"]],Album_data[["Album"]]),]
 
 tableWeb <- paste("<tr>\n",
             "\t<!-- Path to the image -->\n",
-            "\t<td><img src=\"images OUTPUT\\",Album_data[["Path"]],"\" alt=\"",Album_data[["Album"]],"\" height=200></img></th>\n",
-            "\t<td>",Album_data[["Album"]],"</th>\n",
-            "\t<td>",Album_data[["Artist"]],"</th>\n",
+            "\t<td><img src=\"images\\",Album_data_Ordered[["Path"]],"\" alt=\"",Album_data_Ordered[["Album"]],"\" height=200></img></th>\n",
+            "\t<td>",Album_data_Ordered[["Album"]],"</th>\n",
+            "\t<td>",Album_data_Ordered[["Artist"]],"</th>\n",
             "\t<td>","","</th>\n",
-            "\t<td>",Album_data[["Owner"]],"</th>\n",
+            "\t<td>",Album_data_Ordered[["Owner"]],"</th>\n",
       "</tr>\n",sep="")
 
 Copie.Presse.Papier(tableWeb)
