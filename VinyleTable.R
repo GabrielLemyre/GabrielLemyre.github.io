@@ -49,7 +49,7 @@ Copie.Presse.Papier <- function(string) {
 # write_xlsx(Albums.info.full.Ordered,paste("/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/VinyleTable_Mado.xlsx"))
 
 Album_data <- read_excel(paste("/Users/gabriellemyre/Documents/GitHub/GabrielLemyre.github.io/VinyleTable.xlsx"))
-names(Album_data)  <- c("Artist","Album","Path","Owner")
+names(Album_data)  <- c("Artist","Album","Path","Owner","Borrower")
 Album_data_Ordered <- Album_data[order(Album_data[["Artist"]],Album_data[["Album"]]),]
 
 tableWeb <- paste("<tr>\n",
@@ -59,6 +59,7 @@ tableWeb <- paste("<tr>\n",
             "\t<td>",Album_data_Ordered[["Artist"]],"</th>\n",
             "\t<td>","","</th>\n",
             "\t<td>",Album_data_Ordered[["Owner"]],"</th>\n",
+            "\t<td>",Album_data_Ordered[["Borrower"]],"</th>\n",
       "</tr>\n",sep="")
 
 Copie.Presse.Papier(tableWeb)
