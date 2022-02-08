@@ -47,13 +47,7 @@ table.myFormat tr td {
 
 
  <body>
-   <script type="text/javascript">
-function ChangeBorrower(value,idB)
-{
-  const element = document.getElementById(idB);
-  element.innerHTML = value;
-}
-</script>
+
 
 <center>
     <h1>Répertoire de Vinyle</h1>
@@ -79,14 +73,7 @@ function ChangeBorrower(value,idB)
     	<td>2PAC</th>
     	<td></th>
     	<td>Gabriel</th>
-    	<td>
-        <select id ="ddl" name="ddl" onchange="ChangeBorrower(this.value);">
-        <option value='Catherine'>Catherine</option>
-        <option value='Gabriel'>Gabriel</option>
-        <option value='Laura'>Laura</option>
-        <option value='Madeleine'>Madeleine</option>
-        </select>
-      </th>
+    	<td></th>
     </tr>
 
     <tr>
